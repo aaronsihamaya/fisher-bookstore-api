@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Fisher.Bookstore.Api.Models;
 using Microsoft.AspNetCore.Mvc;
+using Fisher.Bookstore.Api.Data;
+
 
 namespace Fisher.Bookstore.Api.Controllers
 {
@@ -27,6 +29,19 @@ public BooksController(BookstoreContext db)
         {
             Id = 2,
             Title = "Patterns of Enterprise Application Architecture"
+        });
+
+        this.db.Books.Add(new Book
+        {
+            Id = 3,
+            Title = "Cool Book"
+        });
+
+
+        this.db.Books.Add(new Book
+        {
+            Id = 4,
+            Title = "Awesome Book"
         });
 
         this.db.SaveChanges();
