@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Fisher.Bookstore.Api.Models;
 using Microsoft.AspNetCore.Mvc;
+using Fisher.Bookstore.Api.Data;
+
 
 namespace Fisher.Bookstore.Api.Controllers
 {
@@ -20,13 +22,13 @@ public AuthorsController(BookstoreContext db)
     {
         this.db.Authors.Add(new Author {
             Id = 1,
-            Title = "The Lean Startup"
+            Name = "The Lean Startup"
         });
 
         this.db.Authors.Add(new Author
         {
             Id = 2,
-            Title = "Patterns of Enterprise Application Architecture"
+            Name = "Patterns of Enterprise Application Architecture"
         });
 
         this.db.SaveChanges();
@@ -83,7 +85,7 @@ public IActionResult Put(int id, [FromBody]Author newAuthor)
         return NotFound();
     }
 
-    currentAuthor.author = newAuthor.author;
+    currentAuthor.Name = newAuthor.Name;
 
     this.db.Authors.Update(currentAuthor);
     this.db.SaveChanges();
