@@ -20,13 +20,15 @@ public AuthorsController(BookstoreContext db)
     {
         this.db.Authors.Add(new Author {
             Id = 1,
-            Title = "The Lean Startup"
+            Name = "John Doe",
+            bio = "Crazy Cool Dude"
         });
 
         this.db.Authors.Add(new Author
         {
             Id = 2,
-            Title = "Patterns of Enterprise Application Architecture"
+            Name = "Mary Jane",
+            bio = "Krazy Kool Lady"
         });
 
         this.db.SaveChanges();
@@ -83,7 +85,8 @@ public IActionResult Put(int id, [FromBody]Author newAuthor)
         return NotFound();
     }
 
-    currentAuthor.author = newAuthor.author;
+    currentAuthor.Name = newAuthor.Name;
+    currentAuthor.Id = newAuthor.Id;
 
     this.db.Authors.Update(currentAuthor);
     this.db.SaveChanges();
