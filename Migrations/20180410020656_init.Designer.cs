@@ -11,8 +11,8 @@ using System;
 namespace Fisher.Bookstore.Api.Migrations
 {
     [DbContext(typeof(BookstoreContext))]
-    [Migration("20180329005250_init2")]
-    partial class init2
+    [Migration("20180410020656_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,9 +26,9 @@ namespace Fisher.Bookstore.Api.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Bio");
-
                     b.Property<string>("Name");
+
+                    b.Property<string>("bio");
 
                     b.HasKey("Id");
 
@@ -39,8 +39,6 @@ namespace Fisher.Bookstore.Api.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Author");
 
                     b.Property<int?>("AuthorId");
 
@@ -61,7 +59,7 @@ namespace Fisher.Bookstore.Api.Migrations
 
             modelBuilder.Entity("Fisher.Bookstore.Api.Models.Book", b =>
                 {
-                    b.HasOne("Fisher.Bookstore.Api.Models.Author")
+                    b.HasOne("Fisher.Bookstore.Api.Models.Author", "Author")
                         .WithMany("Titles")
                         .HasForeignKey("AuthorId");
                 });
