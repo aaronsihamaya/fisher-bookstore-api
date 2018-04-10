@@ -22,15 +22,23 @@ public AuthorsController(BookstoreContext db)
     {
         this.db.Authors.Add(new Author {
             Id = 1,
+<<<<<<< HEAD
             Name = "John Doe",
             bio = "Crazy Cool Dude"
+=======
+            Name = "The Lean Startup"
+>>>>>>> 7f199976f1e953e3af71c442bd0d5d586a51e339
         });
 
         this.db.Authors.Add(new Author
         {
             Id = 2,
+<<<<<<< HEAD
             Name = "Mary Jane",
             bio = "Krazy Kool Lady"
+=======
+            Name = "Patterns of Enterprise Application Architecture"
+>>>>>>> 7f199976f1e953e3af71c442bd0d5d586a51e339
         });
 
         this.db.SaveChanges();
@@ -88,7 +96,10 @@ public IActionResult Put(int id, [FromBody]Author newAuthor)
     }
 
     currentAuthor.Name = newAuthor.Name;
+<<<<<<< HEAD
     currentAuthor.Id = newAuthor.Id;
+=======
+>>>>>>> 7f199976f1e953e3af71c442bd0d5d586a51e339
 
     this.db.Authors.Update(currentAuthor);
     this.db.SaveChanges();

@@ -10,7 +10,7 @@ namespace Fisher.Bookstore.Api.Models
 
         public string Name { get; set; }
 
-        public string Bio { get; set; }
+        public string bio { get; set; }
 
         public List<Book> Titles { get; set; }
     }
