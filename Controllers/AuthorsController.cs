@@ -23,14 +23,14 @@ public AuthorsController(BookstoreContext db)
         this.db.Authors.Add(new Author {
             Id = 1,
             Name = "John Doe",
-            bio = "Crazy Cool Dude"
+            Bio = "Crazy Cool Dude"
         });
 
         this.db.Authors.Add(new Author
         {
             Id = 2,
             Name = "Mary Jane",
-            bio = "Krazy Kool Lady"
+            Bio = "Krazy Kool Lady"
         });
 
         this.db.SaveChanges();
@@ -88,6 +88,7 @@ public IActionResult Put(int id, [FromBody]Author newAuthor)
     }
 
     currentAuthor.Name = newAuthor.Name;
+    currentAuthor.Bio = newAuthor.Bio;
     currentAuthor.Id = newAuthor.Id;
 
     this.db.Authors.Update(currentAuthor);

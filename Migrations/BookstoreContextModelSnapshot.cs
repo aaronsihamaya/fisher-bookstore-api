@@ -25,9 +25,9 @@ namespace Fisher.Bookstore.Api.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Bio");
 
-                    b.Property<string>("bio");
+                    b.Property<string>("Name");
 
                     b.HasKey("Id");
 

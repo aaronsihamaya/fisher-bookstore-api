@@ -11,7 +11,7 @@ using System;
 namespace Fisher.Bookstore.Api.Migrations
 {
     [DbContext(typeof(BookstoreContext))]
-    [Migration("20180410020656_init")]
+    [Migration("20180411222455_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,9 +26,9 @@ namespace Fisher.Bookstore.Api.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Bio");
 
-                    b.Property<string>("bio");
+                    b.Property<string>("Name");
 
                     b.HasKey("Id");
 
