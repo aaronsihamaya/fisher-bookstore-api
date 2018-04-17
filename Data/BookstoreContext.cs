@@ -1,8 +1,8 @@
 using System;
 using Microsoft.EntityFrameworkCore;
-using Fisher.Bookstore.Api.Models;
+using Fisher.GroceryApi.Models;
 
-namespace Fisher.Bookstore.Api.Data
+namespace Fisher.GroceryApi.Data
 {
 
     public class BookstoreContext : DbContext
@@ -15,9 +15,7 @@ namespace Fisher.Bookstore.Api.Data
 
         protected override void OnModelCreating(ModelBuilder builder) => base.OnModelCreating(builder);
 
-        public DbSet<Book> Books {get; set;} 
-
-        public DbSet<Author> Authors {get; set;} 
+        public DbSet<Item> GroceryItems {get; set;}
         
     }
 }

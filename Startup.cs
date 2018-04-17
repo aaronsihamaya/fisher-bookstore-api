@@ -9,12 +9,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
-using Fisher.Bookstore.Api.Models;
-using Fisher.Bookstore.Api.Data;
+using Fisher.GroceryApi.Models;
+using Fisher.GroceryApi.Data;
 using Microsoft.AspNetCore.Cors;
 
 
-namespace Fisher.Bookstore.Api
+namespace Fisher.GroceryApi
 {
     public class Startup
     {
